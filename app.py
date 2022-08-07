@@ -53,7 +53,7 @@ def userlogin():
         # remember = True if request.form.get('remember') else False
 
         user = Users.query.filter_by(username=username).first()
-        if user and bcrypt.check_password_hash(user.password, password):
+        if (user and bcrypt.check_password_hash(user.password, password)):
             if user.status == 1:
                 session['username'] = username
                 flash("Login Successfully.", "success")
