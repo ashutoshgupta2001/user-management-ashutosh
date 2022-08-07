@@ -1,0 +1,178 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#home{
+    display: flex;
+}
+#navbar{
+    background-color: rgb(89, 71, 170);
+    width: 16%;
+    position: sticky;
+    top: 0;
+}
+#title{
+    padding: 10px;
+    color: #fff;
+    border-bottom: 3px solid rgb(37, 35, 35);
+}
+#title p{
+    font-size: 20px;
+    padding-bottom: 5px;
+    line-height: 30px;
+}
+#navbar ul{
+    margin-top: 10px;
+    
+}
+#navbar ul li{
+    line-height: 30px;
+    padding-right: 30px;
+    
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+#navbar ul li a{
+    color: #fff;
+    font-size: 15px;
+    
+} 
+#navbar ul li:hover{
+    background: rgb(27, 27, 27);
+    transition: 0.5s;
+}
+#navbar ul li a:hover{
+    color: #70A300;
+}
+#user{
+    width: 84%;
+    height: 100vh;
+    background-color: rgb(204, 203, 203);
+    padding:  100px 200px 100px 100px;
+}
+.user-info{
+    background-color: #fff;
+    
+    display: flex;
+    flex-direction: row;
+    box-shadow: 5px 5px 2px rgb(128, 122, 122);
+
+    /* width: 80%; */
+}
+.user-img{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+align-items: center;
+justify-content: center;
+}
+img{
+    width: 80%;
+    display: block;
+}
+.user-content{
+    margin-top: 10px;
+   color: #fff;
+}
+.user-content p{
+    margin-top: 5px;
+}
+.user-card{
+    /* border: 2px solid black; */
+    padding: 25px;
+    width: 70%;
+}
+.profile-head{
+    /* border: 2px solid red; */
+    padding: 5px 24px;
+    border-bottom: 3px solid grey;
+    width: 100%;
+
+}
+.profile-head h1{
+    color:rgb(89, 71, 170) ;
+    font-size: 30px;
+}
+.profile-head h2{
+    color: rgb(89, 71, 170);
+}
+
+
+.heading-div{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid green; */
+    
+
+}
+.content{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    margin: 0px 20px;
+    padding: 10px;
+    color: #353c4e;
+}
+.content h4{
+    color: rgb(49, 48, 48);
+    margin: 2px;
+}
+@media (max-width:1024px){
+    #user{
+        padding: 100px 50px;
+    }
+    .user-card{
+        padding: 20px;
+    }
+}
+@media (max-width:890px)
+{
+    #home{
+        flex-direction: column;
+    }
+    #navbar{
+        width: 100%;
+    }
+    #navbar ul li{
+        display: inline-block;
+    }
+    #user{
+        width: 100%;
+        padding: 0px;
+    }
+    .user-info{
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .user-img{
+        width: 100%;
+        height: 45vh;
+        flex-direction: column;}
+    img{
+        width: 30%;
+        height: 70%;
+    }   
+    .user-content{
+        margin-top: 0px;
+    } 
+    .user-card{
+        width: 100%;
+        padding: 20px;
+    }
+}
+@media (max-width:570px){
+    .heading-div{
+        flex-direction: column;
+    }
+}

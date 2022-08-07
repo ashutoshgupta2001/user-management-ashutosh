@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Module</title>
+  <!-- <link rel="stylesheet" href="/css/newhome.css"> -->
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+  <link rel="stylesheet" href="/static/css/updateprofile.css">
+  <link rel="stylesheet" href="/static/css/alert.css">
+
+  <script src="https://kit.fontawesome.com/6bce487c89.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- <nav id="navbar" style="background-color:rgb(78, 53, 190) ;">
+    
+    <label class="logo">USER MANAGEMENT SYSTEM</label>
+</nav> -->
+  <section id="home">
+    <div id="navbar">
+      <div id="title">
+        <p>USER MANAGEMENT SYSTEM
+        </p>
+      </div>
+      <ul>
+        <li><a  href="/userdashboard">My Profile</a></li>
+        <li><a style="color: rgb(168, 197, 168);" href="/user/update-profile">Update Profile</a></li>
+        <li><a href="/user/change-password">Change Password</a></li>
+        <!-- <li><a href="/feedback">Feedback</a></li> -->
+        <li><a href="/user/delete-profile">Delete Profile</a></li>
+        <li><a href="/userlogout">Logout</a></li>
+      </ul>
+    </div>
+    <div id="user-home">
+        <div>
+            <!-- Flash messages-->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{category}} alert-dismissible fade show flash-msg" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+          </div>
+    <div class="form-container">
+        <div class="form-title">
+            <p>UPDATE PROFILE</p>
+        </div>
+        <form action="/user/update-profile" method="post">
+            <div class="form-control">
+                <div class="input-box">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" class="form-input" value="{{user.first_name}}" required>
+                </div>
+                <div class="input-box">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" class="form-input" value="{{user.last_name}}" required>
+                </div>
+                <div class="input-box">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" class="form-input" placeholder="dd/mm/yyyy" value="{{user.dob}}">
+                </div>
+                <div class="input-box">
+                    <label for="phone">Phone</label>
+                    <input type="phone" name="phone" class="form-input" placeholder="Phone" value="{{user.phone}}">
+                </div>
+                <div class="input-box">
+                    <label for="education">Education</label>
+                    <input type="text" name="education" class="form-input" placeholder="Highest Education" value="{{user.education}}">
+                </div>
+                <div class="input-box">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" class="form-input" placeholder="Locality/City/State" value="{{user.address}}">
+                </div>
+                <div class="gender-box">
+                    <div class="span"><span>Gender</span></div>
+                    <div class="gen">
+                    <div class="radio-box">
+                    <input type="radio" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" value="Female" required>
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" value="Other" required>
+                    <label for="other">Other</label>
+                </div>
+                </div>
+                </div>                
+            </div>
+            <div class="butt"><input type="submit" class="btn" value="Update Profile"></div>
+        </form>
+        </div>
+    </div>
+</div>
+    
+        </section>
+        
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body></html>
+        

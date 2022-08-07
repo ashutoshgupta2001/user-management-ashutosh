@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Module</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Ibarra+Real+Nova:ital,wght@0,400;1,500&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap"
+    rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/home.css"> -->
+  <link rel="stylesheet" href="/static/css/admindashboard.css">
+  <link rel="stylesheet" href="/static/css/newhome.css">
+  <link rel="stylesheet" href="/static/css/alert.css">
+  <link rel="stylesheet" href="/static/css/userchangepassword.css">
+  <link rel="stylesheet" href="/static/css/pagination.css">
+  <script src="https://kit.fontawesome.com/6bce487c89.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  
+    <nav id="navbar">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">USER MANAGEMENT SYSTEM</label>
+      <ul>
+          <li><a class="active" href="/admindashboard">Dashboard</a></li>
+          <li><a style="background: rgb(36, 30, 30);" href="/adminlogout">Logout</a></li>
+      </ul>
+
+  </nav>
+    <div>
+      <!-- Flash messages-->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{category}} alert-dismissible fade show flash-msg" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </div>
+    <section id="dashboardhome">
+      <h3 class="center">Admin Dashboard</h3>
+      <p class="center">
+        This is Admin dashboard that display the details of all users and provide the full control to manage user management system.
+      </p>
+  
+    </section>
+    
+    <div class="box-container box-mr-jc-end">
+      <div class="box" id="changepassword" style="background: green;"><a href="/admin/change-password">Change Password </a></div>
+      <!-- <div class="box " id="feedback" ><a href="">Feedbacks</a></div>| -->
+      <div class="box" id="contactreq" style="background: darkcyan;"><a href="/admindashboardcontacts">Contact Requests </a></div>
+    </div>
+    {% block body %}  {% endblock %}  
+
+  <footer>
+    <div class="center">
+      Copyright &copy; usermanagement.ashutosh.herokuapp.com. All right reserved.
+    </div>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

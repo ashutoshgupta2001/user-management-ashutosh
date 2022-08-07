@@ -1,0 +1,11 @@
+{
+  "params":
+  {
+    "database_uri": "mysql://root:@localhost/usermodule",
+    "postgresql_uri": "postgres://postgres:hr@localhost:5432/usermodule",
+    "oracle_uri":"oracle://hr:hr@127.0.0.1:1521/xe",
+
+    "gmail-user": "user_email@gmail.com",
+    "gmail-password": "user_password"
+}
+}

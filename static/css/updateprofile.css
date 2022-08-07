@@ -1,0 +1,105 @@
+#user-home{
+    width: 84%;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container{
+   min-height: 500px;
+   width: 740px;
+   /* border: 2px solid black; */
+   background: #ffffff;
+   padding: 20px;
+   color: #353c4e;;
+   font-family: Cambria,Cochin,Georgia,Times,Times New Roman,serif;
+   border-radius: 5px;
+   margin:20px;
+   box-shadow: 5px 5px 2px rgb(128, 122, 122);
+    
+}
+.form-title{
+    margin-top: 5px;
+padding: 10px;
+font-size: 25px;
+letter-spacing: 3px;
+color: rgb(89, 71, 170);
+border-bottom: 3px solid rgb(233, 229, 229);
+}
+.form-control{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-between;
+    padding: 10px;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+.input-box input{
+    width: 280px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border:1px solid rgb(155, 132, 168);
+    border-radius: 5px;
+    color: rgb(49, 46, 48) ;
+    margin-top: 5px;
+}
+.input-box label{
+    font-size: 1.2rem;
+    margin-top: 10px;
+
+}
+.gender-box{
+    margin-top: 10px;
+}
+.span{
+    font-size: 1.2rem;
+}
+.gen{
+    margin-top: 10px;
+}
+.gen .radio-box input{
+    padding: 20px;
+    margin-left: 30px;
+    border:2px solid rgb(155, 132, 168);
+    font-size: 20px;
+}
+.radio-box label{
+    font-size: 1.2rem;
+    margin-top: 10px;   
+}
+.butt{
+    padding: 10px;
+    margin: 10px;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    background-color: rgb(89, 71, 170);;
+    
+}
+.butt input{
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    color: #fff;
+    cursor: pointer;
+   
+}
+.butt:hover{
+    background: #360033;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+@media (max-width:890px){
+#user-home{
+    width: 100%;
+}
+.form-control{
+    justify-content: center;
+}
+}

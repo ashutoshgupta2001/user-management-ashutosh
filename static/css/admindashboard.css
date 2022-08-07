@@ -1,0 +1,187 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#dashboardhome {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 50vh;
+    width: 100%;
+    align-items: center;
+    justify-content:center;
+    
+    background: url('/static/img/komarov-egor-Lc2R_w0zvtA-unsplash.jpg') no-repeat center center/cover;
+    left: 0px;
+    /* border: 4px solid black; */
+}
+
+
+
+#dashboardhome h3 {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Bree Serif', serif;
+}
+
+#dashboardhome p {
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+}
+
+.table-div {
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+table,th,
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1.2px solid rgb(194, 192, 192);
+    border-collapse:collapse ;
+}
+table,th{
+    border-bottom: 3px solid grey;
+}
+
+.btn-danger{
+    padding: 6px 16px;
+    background-color: rgb(226, 35, 35);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.btn-danger:hover{
+    color: black;
+}
+
+.box-container {
+    margin-top: 10px;
+    /* border: 2px solid red; */
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid yellow;
+    height: 50px;
+    width: 15rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246, 187, 59);
+    border-radius: 50px;
+}
+
+
+.box a {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.box a:hover {
+    cursor: pointer;
+    color: rgb(43, 40, 40);
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 9px 20px;
+
+}
+
+.center {
+    text-align: center;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 10px auto;
+    padding: 4px 16px;
+    border:2px solid rgba(0,0,0,.125);border-radius: 5px;
+    background-color: #f0f0f0;
+}
+.search-bar input{
+    width: 96%;
+    padding: 0.2rem;
+    font-size: 1rem;
+    border:none;
+    border-radius: 5px;
+     background: none;
+  outline: none;
+    color: rgb(49, 46, 46) ;
+    margin-top: 4px;
+    line-height: 1;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+
+@media (max-width:870px) {
+    
+    #dashboardhome h3 {
+
+        font-size: 2.2rem;
+    }
+
+    #dashboardhome p {
+        font-size: 1.2rem;
+
+    }
+    .btn{
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+    
+    .box-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .box{
+        margin-top: 20px;
+    }
+    .search-bar{
+        width: 99%;
+    }
+    .table-div{
+
+        min-width: 100%;
+    }
+    table,th,td{
+        padding: 5px 2px;
+    }
+    
+}
+    @media (max-width:570px) {
+        
+        h2 {
+            font-size: 2rem;
+        }
+        #dashboardhome h3 {
+    
+            font-size: 1.6rem;
+        }
+    
+        #dashboardhome p {
+            font-size: .7rem;
+    
+        }
+        
+    }

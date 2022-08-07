@@ -1,0 +1,80 @@
+{% extends 'adminlayout.html' %}
+{% block body %}
+      <div class="search-bar">
+        <input id="myInput" type="search" placeholder="Search by name" onkeyup="searchFun()">
+        <!-- <button type="submit" id="search-button" class="btn-green">Search</button> -->
+      </div>
+
+    
+
+    <div class="table-div">
+      <table class="table" id="myTable">
+        <thead>
+          <tr>
+            <th>Sr.N.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>messages</th>
+            <th>Status</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for contact in contact.items %}
+
+          <tr>
+            <td>{{contact.sn}}</td>
+            <td>{{contact.first_name}}</td>
+            <td>{{contact.last_name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.Phone}}</td>
+            <td>{{contact.date}}</td>
+            <td style="max-width:25vw ;">{{contact.message}}</td>
+            
+            <td>
+                {% if contact.status == "Completed" %}
+               <strong> Completed</strong>
+                {% else %}
+                <a href="/contactrequestcompleted/{{contact.sn}}"><button class="btn-danger" style="background-color: rgb(236, 199, 77);">Complete</button></a></td>
+                {% endif %}
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+
+      </table>
+      </div>
+
+     
+
+    <div class="bd-example">
+      <ul class="pagination">
+        {% if contact.has_prev %}
+        <li class="page-item"><a class="page-link"
+            href="{{ url_for('admindashboardcontacts', page=contact.prev_num) }}">Previous</a></li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+        {% endif %}
+        
+
+        {% for page_num in contact.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+        {% if page_num %}
+        {% if contact.page == page_num %}
+        <li class="page-item" ><a class="page-link" href="{{url_for('admindashboardcontacts', page=page_num)}}">{{page_num}}</a></li>
+        {% else %}
+        <li class="page-item" ><a class="page-link" href="{{url_for('admindashboardcontacts', page=page_num)}}">{{page_num}}</a></li>
+        {% endif %} {% else %}<li class="page-item disabled" id="example_ellipsis"><p class="page-link">…</p></li>{% endif %} {% endfor %}
+
+        {% if contact.has_next %}
+        <li class="page-item"><a class="page-link" href="{{ url_for('admindashboardcontacts', page=contact.next_num) }}">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">Next</span></li>
+        {% endif %} 
+      </ul>
+    </div>
+  
+{% endblock %}

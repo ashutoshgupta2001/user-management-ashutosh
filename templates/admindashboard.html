@@ -1,0 +1,89 @@
+{% extends 'adminlayout.html' %}
+{% block body %}
+
+      <div class="search-bar">
+        <input id="myInput" type="search" placeholder="Search by name" onkeyup="searchFun()">
+        <!-- <button type="submit" id="search-button" class="btn-green">Search</button> -->
+      </div>
+
+    
+
+    <div class="table-div">
+      <table class="table" id="myTable">
+        <thead>
+          <tr>
+            <th>User_id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Education</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Delete Profile</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for users in users.items %}
+
+          <tr>
+            <td>{{users.user_id}}</td>
+            <td>{{users.first_name}}</td>
+            <td>{{users.last_name}}</td>
+            <td>{{users.username}}</td>
+            <td>{{users.phone}}</td>
+            <td>{{users.dob}}</td>
+            <td>{{users.gender}}</td>
+            <td>{{users.education}}</td>
+            <td>{{users.address}}</td>
+            <td>{{users.date}}</td>
+            <td>{{users.status}}</td>
+            
+            <td><a href="/delete/{{users.user_id}}"><button class="btn-danger">Delete</button></a></td>
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+
+      </table>
+      </div>
+
+      <!-- {% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+    {% if page_num %}
+    {% if users.page == page_num %}
+    <a class="" href="{{url_for('admindashboard', page=page_num)}}">{{page_num}}</a>
+    {% else %}
+    <a class="" href="{{url_for('admindashboard', page=page_num)}}">{{page_num}}</a>
+    {% endif %} {% else %} ... {% endif %} {% endfor %} -->
+    <div class="bd-example">
+      <ul class="pagination">
+        {% if users.has_prev %}
+        <li class="page-item"><a class="page-link"
+            href="{{ url_for('admindashboard', page=users.prev_num) }}">Previous</a></li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+        {% endif %}
+        
+
+        {% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+        {% if page_num %}
+        {% if users.page == page_num %}
+        <li class="page-item" ><a class="page-link" href="{{url_for('admindashboard', page=page_num)}}">{{page_num}}</a></li>
+        {% else %}
+        <li class="page-item" ><a class="page-link" href="{{url_for('admindashboard', page=page_num)}}">{{page_num}}</a></li>
+        {% endif %} {% else %}<li class="page-item disabled" id="example_ellipsis"><p class="page-link">…</p></li>{% endif %} {% endfor %}
+
+        {% if users.has_next %}
+        <li class="page-item"><a class="page-link" href="{{ url_for('admindashboard', page=users.next_num) }}">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">Next</span></li>
+        {% endif %}
+      </ul>
+    </div>
+  
+{% endblock %}
