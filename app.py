@@ -385,7 +385,7 @@ def contact():
         phone = request.form.get('phone')
         message = request.form.get('message')
 
-        entry = Contact(first_name=first_name, last_name=last_name, email=email, phone=phone, date=datetime.now(), message=message )
+        entry = Contact(first_name=first_name, last_name=last_name, email=email, phone=phone,status="", date=datetime.now(), message=message )
         db.session.add(entry)
         db.session.commit()
         flash("Thanks for contacting us. We will get back to you soon.", "success")
