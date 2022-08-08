@@ -151,7 +151,7 @@ def userChangePassword():
             flash("Current Password Wrong.","danger")
         else:    
             if new_password == confirm_password:
-                hash_password = bcrypt.generate_password_hash(new_password)
+                hash_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
                 user.password = hash_password
                 db.session.commit()
                 flash("Password Changed Successfully", "success")
@@ -185,7 +185,7 @@ def signup():
         if euser:
             flash("The account for this username is already exist.", "warning")
         else:
-            hash_password = bcrypt.generate_password_hash(password)
+            hash_password = bcrypt.generate_password_hash(password).decode('utf-8')
             user = Users(first_name=first_name, last_name=last_name, username=username, password=hash_password,status=0, date=datetime.now())
             
             session['newuser'] = username
@@ -273,7 +273,7 @@ def createnew_password():
             cpassword = request.form.get('confirm_password')
 
             if (new_password == cpassword):
-                hash_password = bcrypt.generate_password_hash(new_password)
+                hash_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
                 user = Users.query.filter_by(username=username).first()
                 user.password = hash_password
                 db.session.commit()
