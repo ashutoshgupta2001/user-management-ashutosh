@@ -21,6 +21,7 @@ class Users(db.Model):
     date = db.Column(db.Date, nullable=False)
     status = db.Column(db.Integer,nullable=False)
 
+
 class Admin(db.Model):
     '''
     sn, name, username,password
