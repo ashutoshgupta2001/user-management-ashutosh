@@ -6,7 +6,7 @@ from flask_mail import *
 from random import *
 from flask_bcrypt import Bcrypt
 from itsdangerous import URLSafeTimedSerializer as Serializer
-from datetime import datetime
+from datetime import datetime,date
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -186,7 +186,7 @@ def signup():
             flash("The account for this username is already exist.", "warning")
         else:
             hash_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            user = Users(first_name=first_name, last_name=last_name, username=username, password=hash_password,status=0, date=datetime.now())
+            user = Users(first_name=first_name, last_name=last_name, username=username, password=hash_password,status=0, date=date.today())
             
             session['newuser'] = username
             send_verification_mail(username)

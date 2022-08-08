@@ -18,7 +18,7 @@ class Users(db.Model):
     gender = db.Column(db.String(10), nullable=True)
     education = db.Column(db.String(50), nullable=True)
     address = db.Column(db.String(200), nullable=True)
-    date = db.Column(db.DateTime(timezone=True), nullable=False)
+    date = db.Column(db.Date, nullable=False)
     status = db.Column(db.Integer,nullable=False)
 
 class Admin(db.Model):
