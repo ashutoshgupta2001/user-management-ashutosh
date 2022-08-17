@@ -2,8 +2,10 @@ from flask import render_template, request, session, redirect, flash, url_for
 from flask_mail import *
 import os
 from datetime import datetime
-from app import app, db, mail, bcrypt, s
+from app import app, db, mail
 from .models import Users, Admin, Contact
+from dotenv import load_dotenv
+load_dotenv()
 
 
 @app.route('/adminlogin', methods=['GET', 'POST'])

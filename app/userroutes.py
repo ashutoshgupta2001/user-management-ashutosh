@@ -4,6 +4,8 @@ import os
 from datetime import date
 from app import app, db, mail, bcrypt, s
 from .models import Users
+from dotenv import load_dotenv
+load_dotenv()
 
 
 @app.route('/userlogin', methods=['GET', 'POST'])
