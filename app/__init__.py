@@ -20,7 +20,7 @@ app.config.update(
 )
 mail = Mail(app)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] ="postgresql://dctbaweftgwoor:66ca3e590119e8a8562f420de326678f54da27d94b8798d55311ba8c28586bde@ec2-18-214-35-70.compute-1.amazonaws.com:5432/deh27mlcom5tav"
+app.config['SQLALCHEMY_DATABASE_URI'] =os.getenv('DATABASE_URL')
 
 db = SQLAlchemy(app)
 s = Serializer(app.config['SECRET_KEY'])
