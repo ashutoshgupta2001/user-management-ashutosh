@@ -1,8 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, flash, url_for
-from flask_sqlalchemy import SQLAlchemy
 from app import db
-from datetime import datetime, timezone
-
 
 class Users(db.Model):
     '''
