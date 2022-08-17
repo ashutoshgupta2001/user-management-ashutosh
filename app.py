@@ -9,6 +9,7 @@ from itsdangerous import URLSafeTimedSerializer as Serializer
 from datetime import datetime,date
 from dotenv import load_dotenv
 load_dotenv()
+from models import *
 
 
 app = Flask(__name__)
@@ -31,9 +32,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] ="postgresql://dctbaweftgwoor:66ca3e590119
 db = SQLAlchemy(app)
 s = Serializer(app.secret_key)
 bcrypt = Bcrypt(app)
-
-from models import *
-db.create_all()
 
 @app.route('/')
 def home():
