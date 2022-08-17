@@ -16,8 +16,8 @@ load_dotenv()
 
 app = Flask(__name__)
 
-gmail_user= os.getenv("EMAIL_USER")  
-gmail_password= os.getenv("EMAIL_PASSWORD")  
+gmail_user= os.environ.get("EMAIL_USER")  
+gmail_password= os.environ.get("EMAIL_PASSWORD")  
 
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
@@ -28,7 +28,7 @@ app.config.update(
     MAIL_USE_TLS=False  
 )
 mail = Mail(app)
-app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('DATABASE_URL')
 
 db = SQLAlchemy(app)
